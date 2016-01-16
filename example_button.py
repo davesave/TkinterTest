@@ -2,11 +2,20 @@ from tkinter import *
 
 
 def button_command():
-        print('buttons are cool')
+        print('populate')
+        # button['bg'] = 'blue'
+
+        for item in ['Liz', 'Tom', 'Chi']:
+                listbox.insert(END, item)        # END = position
 
 root = Tk()
+root.geometry('600x400+500+500')  # WTF: width x height + topX + topY
 
-button = Button(root, text='Press', command=button_command)
-button.pack(padx=20, pady=20)
+listbox = Listbox(root)
+button = Button(root, text='Press', command=button_command, padx=100, pady=100)
 
+button.pack()
+listbox.pack()
+
+# Run.
 root.mainloop()
